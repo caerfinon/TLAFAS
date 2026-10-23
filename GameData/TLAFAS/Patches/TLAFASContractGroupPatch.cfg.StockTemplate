@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------
+// Module manager patch for TLAFAS
+// -----------------------------------------------------------------
+
+@CONTRACT_GROUP[TFAS]:NEEDS[TLAFAS]
+{
+	// The names of your ports:  Full name / site name (typically a short ID code or other short name)
+	// The first entry in the list must always be the KSC port location on any world 
+	DATA
+    {
+        type = List<string>
+		siteFullName = ["KSC Harbour"]
+		siteName = ["KSC"]	
+	}
+	
+	// The Waypoint locations of your ports: The LON/LAT of the major waterlaunch and embark location
+    // The embark point is the location where VIK passengers spawn and need to be picked up from
+   	// The first entry in the list must always be the KSC port location on any world 
+	DATA
+    {
+        type = List<double>	
+		portLAT = []
+		portLON = []
+		embarkLAT = []
+		embarkLON = []
+	}
+	
+	// The Index for the order of the port of call voyage. Each corresponds to the data for a named port defined above. The value is the index of the port travelled to during the progression. 	
+	DATA
+    {
+        type = List<int>
+		portOfCallRoute = []
+	}
+}
